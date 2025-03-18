@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-          cache: 'npm'
+          # Removed cache option since no lock file is present
 
       - name: Install dependencies
         run: npm install
