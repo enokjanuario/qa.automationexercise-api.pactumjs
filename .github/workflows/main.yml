@@ -17,6 +17,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm install
@@ -30,8 +31,5 @@ jobs:
       - name: Generate report
         run: npm run report
 
-      - name: Upload report
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-report
-          path: reports
+      - name: Show report location
+        run: echo "Report generated in reports directory"
